@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>homework#5</title>
+        <title>homework#6</title>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
@@ -367,6 +367,20 @@
                         </li>
                     </ul>
                 </div>
+                <form class="subscribe-footer">
+                    <!-- <h3 class="title">ПОДПИШИТЕСЬ НА РАССЫЛКУ</h3> -->
+                    <div class="subscribe" role="group" >
+                        <label class="title" for="email"><span>ПОДПИШИТЕСЬ НА РАССЫЛКУ</span></label>
+                        <input class="email" type="email" name="subscribe" id="email">
+                        <button class="send" type="submit">Подписаться
+                            <svg width="24px" height=""24px>
+                                <use href="./images/icons.svg#icon-send"></use>
+                            </svg>
+                        </button>
+                    </div>
+
+                    </button>                    
+                </form>
 
             </div>
         </footer>
@@ -379,6 +393,25 @@
                         <use href="./images/icons.svg#close"></use>
                     </svg>
                 </button>
+                <form action="" class="form-modal">
+                    <h2 class="title-modal"></h2>
+                    <div class="form">
+                        <label for="name"><span>Имя</span></label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                    <div>
+                        <label for="tel"><span>Телефон</span></label>
+                        <input type="tel" name="tel" id="tel">
+                    </div>
+                        <label for="email"><span>Почта</span></label>
+                        <input type="email" name="email" id="email">
+                        <label for="comment"><span>Коментарий</span></label>
+                        <textarea name="comment" id="comment" rows="10" placeholder="Введите текст"></textarea>
+                    
+                    <input type="checkbox" name="agreement" id="adreement">
+                    <label for="agreement">Соглашаюсь с рассылкой и принимаю<span>Условия договора</span></label>
+                    <button type="submit">Отправить</button>
+                </form>
             </div>
         </div>
         <script src="./js/modal.js"></script>
