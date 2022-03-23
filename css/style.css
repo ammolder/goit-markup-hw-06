@@ -342,21 +342,13 @@ h2 {
 .work-box {
   position: relative;
 }
-/* .work-box::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 70px;
-  background: #2f303acc;
-} */
+
 .work-text {
   position: absolute;
   bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
   width: 100%;
   height: 70px;
 
@@ -739,6 +731,91 @@ h2 {
   bottom: 0;
   left: 0;
 }
+.form-modal {
+  margin-top: 38px;
+  margin-left: 43px;
+}
+.title-modal {
+  width: 448px;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+.form-field {
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  margin-bottom: 30px;
+  resize: none;
+}
+.form-input {
+  width: 448px;
+  height: 40px;
+  padding-left: 40px;
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translatey(-50%);
+  color: black;
+}
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-50px);
+  color: var(--accent-color);
+}
+.icon-modal {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: var(--title-text-color);
+  transition: fill 250ms var(--timing-function);
+}
+.form-field:focus-within .icon-modal {
+  fill: var(--accent-color);
+}
+.form-checkbox {
+  resize: none;
+}
+.form-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  margin-bottom: 30px;
+}
+.checkbox {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.icon-moon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-color: greenyellow;
+
+  border: 2px solid var(--title-text-color);
+  border-radius: 4px;
+}
+.checkbox:checked + .icon-moon {
+  border-color: grey;
+  background-color: grey;
+  background-image: url(../images/icoon-moon.svg);
+  background-size: contain;
+  background-origin: content-box;
+}
+
 .subsribe .title {
   display: block;
   margin-bottom: 1.75rem;
