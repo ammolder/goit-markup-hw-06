@@ -732,19 +732,101 @@ h2 {
   left: 0;
 }
 .form-modal {
+  display: block;
+  width: 100%;
+  height: 100%;
   margin-top: 38px;
-  margin-left: 43px;
 }
 .title-modal {
   width: 448px;
+  margin-left: 43px;
   margin-bottom: 12px;
 
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.03em;
-  text-align: center;
 }
+.form-field {
+  position: relative;
+  display: block;
+  height: 58px;
+  margin-left: 43px;
+  margin-bottom: 15px;
+}
+.form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 10px;
+
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.form-input {
+  position: absolute;
+  width: 448px;
+  height: 40px;
+  left: 0;
+  bottom: 0;
+  padding-left: 42px;
+}
+.comment-field {
+  position: relative;
+  display: block;
+  height: 138px;
+  width: 448px;
+  margin-left: 43px;
+  margin-bottom: 20px;
+}
+.form-comment {
+  position: absolute;
+  resize: none;
+  left: 0;
+  bottom: 0;
+  width: 448px;
+  height: 120px;
+}
+.checkbox-field {
+  margin-left: 55px;
+  margin-bottom: 30px;
+}
+.form-checkbox {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.form-field .icon-modal {
+  position: absolute;
+  left: 12px;
+  bottom: 20px;
+  transform: translateY(50%);
+}
+.form-button {
+  width: 200px;
+  height: 50px;
+  margin-left: 167px;
+
+  color: var(--primari-white-color);
+  background-color: var(--accent-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+
+  border-radius: 4px;
+  border: none;
+}
+
+/* 
+
 .form-field {
   position: relative;
   display: block;
@@ -777,7 +859,6 @@ h2 {
   left: 12px;
   transform: translateY(-50%);
   fill: var(--title-text-color);
-  transition: fill 250ms var(--timing-function);
 }
 .form-field:focus-within .icon-modal {
   fill: var(--accent-color);
@@ -809,12 +890,8 @@ h2 {
   border-radius: 4px;
 }
 .checkbox:checked + .icon-moon {
-  border-color: grey;
-  background-color: grey;
-  background-image: url(../images/icoon-moon.svg);
-  background-size: contain;
-  background-origin: content-box;
-}
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='13' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1.957 4.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z' fill='%23fff' stroke='%23fff' stroke-width='.2'/%3E%3C/svg%3E");
+} */
 
 .subsribe .title {
   display: block;
