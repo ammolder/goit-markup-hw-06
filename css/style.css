@@ -516,6 +516,7 @@ h2 {
 .social-footer .title {
   color: var(--primari-white-color);
   font-weight: 700;
+  font-size: 14px;
   margin-top: 0px;
   margin-bottom: 20px;
 }
@@ -549,6 +550,28 @@ h2 {
 .facebook-footer,
 .linkedin-footer {
   fill: var(--primari-white-color);
+}
+.subscribe .title {
+  position: relative;
+  display: block;
+  margin-bottom: 1.75rem;
+
+  color: var(--primari-white-color);
+  font-weight: 700;
+}
+.subsribe span {
+  font-size: 0.875rem;
+  letter-spacing: 0.01rem;
+  color: #757575;
+
+  position: absolute;
+  top: 50%;
+  left: 2.625rem;
+  transform: translateY(-50%);
+  transition: var(--shift);
+}
+.subsribe p {
+  display: block;
 }
 
 /* PORTFOLIO */
@@ -727,6 +750,7 @@ h2 {
   border: none;
   background-color: #ffffff00;
   fill: var(--title-text-color);
+  transition: fill 250ms var(--timing-function);
 }
 .button-close svg {
   position: absolute;
@@ -753,14 +777,15 @@ h2 {
   letter-spacing: 0.03em;
   color: var(--title-text-color);
 }
-.form-field {
+.form-label {
   position: relative;
   display: block;
+  width: 448px;
   height: 58px;
   margin-left: 43px;
   margin-bottom: 15px;
 }
-.form-label {
+.form-text {
   position: absolute;
   top: 0;
   left: 0;
@@ -780,22 +805,28 @@ h2 {
   padding-left: 42px;
   border: 1px solid #21212133;
   border-radius: 4px;
+  transition: border 250ms var(--timing-function);
 }
-.form-field:focus .form-input {
-  border-color: var(--accent-color);
+.form-input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
 }
 .icon-modal {
+  position: absolute;
+  left: 12px;
+  bottom: 11px;
   fill: var(--title-text-color);
+  transition: fill 250ms var(--timing-function);
 }
-.form-input:focus + .icon-modal {
+.form-input:focus ~ .icon-modal {
   fill: var(--accent-color);
 }
-.comment-field {
+.comment-label {
   position: relative;
   display: block;
   height: 138px;
   width: 448px;
-  margin-left: 43px;
+  margin-left: 41px;
   margin-bottom: 20px;
 }
 .form-comment {
@@ -804,41 +835,74 @@ h2 {
   left: 0;
   bottom: 0;
   padding: 12px 16px;
-  width: 448px;
-  height: 120px;
+  min-width: 448px;
+  max-width: 448px;
+  max-height: 120px;
+  min-height: 120px;
   border: 1px solid #21212133;
   border-radius: 4px;
+  transition: border 250ms var(--timing-function);
+}
+.form-comment:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
 }
 .form-comment::placeholder {
   color: var(--form-color);
 }
-.checkbox-field {
-  margin-left: 77px;
+.checkbox-label {
+  display: block;
+  padding-left: 23px;
+  margin-left: 54px;
   margin-bottom: 30px;
 }
-.form-checkbox {
+.checkbox-input {
+  position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   border: 0;
   padding: 0;
-  white-space: nowrap;
   clip: rect(0 0 0 0);
   overflow: hidden;
-
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='15' rx='2' fill='%232196F3'/%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L10.3169 8.49294L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
 }
-.form-checkbox a {
+.checkbox-agreement {
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  margin-left: -23px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 4px;
+}
+.checkbox-input:checked + .checkbox-agreement {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='15' viewBox='0 0 16 15'  xmlns='http://www.w3.org/2000/svg'%3E%3Crect rx='2' fill='none'/%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L10.3169 8.49294L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-origin: border-box;
+  transition: box-shadow 250ms var(--timing-function);
+}
+.checkbox-input:focus + .checkbox-agreement {
+  box-shadow: 0 0 0 0.2em var(--bg-icon);
+}
+
+/* .form-checkbox:focus + .form-agreement {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.2222 1.66667V13.3333H1.77778V1.66667H14.2222ZM14.2222 0H1.77778C0.8 0 0 0.75 0 1.66667V13.3333C0 14.25 0.8 15 1.77778 15H14.2222C15.2 15 16 14.25 16 13.3333V1.66667C16 0.75 15.2 0 14.2222 0Z' fill='%23212121'/%3E%3C/svg%3E");
+}
+
+.form-checkbox:focus + .form-agreement {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='15' rx='2' fill='%232196F3'/%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L10.3169 8.49294L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+} */
+
+.checkbox-condition {
   text-decoration: underline;
   color: var(--accent-color);
+  border-radius: 4px;
+  transition: box-shadow 250ms var(--timing-function);
 }
-
-.form-field .icon-modal {
-  position: absolute;
-  left: 12px;
-  bottom: 20px;
-  transform: translateY(50%);
+.checkbox-condition:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.1em var(--accent-color);
 }
 .form-button {
   width: 200px;
@@ -851,95 +915,11 @@ h2 {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
-
-  border-radius: 4px;
   border: none;
-}
-
-/* 
-
-.form-field {
-  position: relative;
-  display: block;
-  top: 0;
-  left: 0;
-  margin-bottom: 30px;
-  resize: none;
-}
-.form-input {
-  width: 448px;
-  height: 40px;
-  padding-left: 40px;
-}
-
-.form-label {
-  position: absolute;
-  top: 50%;
-  left: 40px;
-  transform: translatey(-50%);
-  color: black;
-}
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-  transform: translateY(-50px);
-  color: var(--accent-color);
-}
-.icon-modal {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  fill: var(--title-text-color);
-}
-.form-field:focus-within .icon-modal {
-  fill: var(--accent-color);
-}
-.form-checkbox {
-  resize: none;
-}
-.form-checkbox {
-  position: relative;
-  display: flex;
-  align-items: center;
-  top: 0;
-  left: 0;
-  margin-bottom: 30px;
-}
-.checkbox {
-  position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-.icon-moon {
-  display: inline-block;
-  width: 16px;
-  height: 15px;
-  background-color: greenyellow;
-
-  border: 2px solid var(--title-text-color);
   border-radius: 4px;
+  transition: box-shadow 250ms var(--timing-function);
 }
-.checkbox:checked + .icon-moon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='13' height='10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m1.957 4.752-.069-.066-.069.065-.888.842-.076.072.076.073 3.496 3.334.069.066.069-.066 7.504-7.158.076-.073-.076-.072-.882-.841-.069-.066-.069.066-6.553 6.246-2.539-2.422Z' fill='%23fff' stroke='%23fff' stroke-width='.2'/%3E%3C/svg%3E");
-} */
-
-.subsribe .title {
-  display: block;
-  margin-bottom: 1.75rem;
-  position: relative;
-}
-.subsribe span {
-  font-size: 0.875rem;
-  letter-spacing: 0.01rem;
-  color: #757575;
-
-  position: absolute;
-  top: 50%;
-  left: 2.625rem;
-  transform: translateY(-50%);
-  transition: var(--shift);
-}
-.subsribe p {
-  display: block;
+.form-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2em var(--bg-icon);
 }
