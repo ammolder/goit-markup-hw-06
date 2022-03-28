@@ -32,6 +32,7 @@
   --bg-icon: #afb1b8;
   --bg-overflay: #2196f3e5;
   --form-color: #75757580;
+  --br-email-footer: #ffffff4d;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -551,27 +552,72 @@ h2 {
 .linkedin-footer {
   fill: var(--primari-white-color);
 }
-.subscribe .title {
-  position: relative;
+.subscribe {
   display: block;
-  margin-bottom: 1.75rem;
+  width: 570px;
+  height: 86px;
+  margin-left: 93px;
+}
+.subscribe .title {
+  margin-bottom: 20px;
 
   color: var(--primari-white-color);
   font-weight: 700;
 }
-.subsribe span {
-  font-size: 0.875rem;
-  letter-spacing: 0.01rem;
-  color: #757575;
-
+.subscribe-label {
+  display: inline-flex;
+}
+.subscribe-label .email {
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+  border: 1px solid var(--br-email-footer);
+  background-color: transparent;
+  border-radius: 4px;
+  transition: border 250ms var(--timing-function);
+}
+.subscribe-label .email:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+.subscribe-label .email::placeholder {
+  color: var(--br-email-footer);
+  transition: color 250ms var(--timing-function);
+}
+.subscribe-label .email:focus::placeholder {
+  color: var(--accent-color);
+}
+.send {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  margin-left: 12px;
+  background-color: var(--accent-color);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border 250ms var(--timing-function);
+}
+.send:focus {
+  outline: none;
+  border: 2px solid var(--br-email-footer);
+}
+.send-text {
   position: absolute;
   top: 50%;
-  left: 2.625rem;
+  left: 29px;
   transform: translateY(-50%);
-  transition: var(--shift);
+  color: var(--primari-white-color);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
 }
-.subsribe p {
-  display: block;
+.send-icon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
 }
 
 /* PORTFOLIO */
