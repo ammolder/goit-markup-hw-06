@@ -32,6 +32,7 @@
   --bg-icon: #afb1b8;
   --bg-overflay: #2196f3e5;
   --form-color: #75757580;
+  --modal__input--br: #21212133;
   --br-email-footer: #ffffff4d;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -589,6 +590,17 @@ h2 {
   color: var(--primari-white-color);
   border: 1px solid var(--accent-color);
 }
+.subscribe-email:-webkit-autofill {
+  border: 1px solid var(--br-email-footer);
+  -webkit-text-fill-color: var(--br-email-footer);
+  -webkit-box-shadow: 0 0 0px 1000px #212121 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.subscribe-email:-webkit-autofill:focus {
+  border: 1px solid var(--accent-color);
+  -webkit-text-fill-color: var(--primari-white-color);
+  caret-color: var(--primari-white-color);
+}
 .subscribe-email::placeholder {
   color: var(--br-email-footer);
   transition: color 250ms var(--timing-function);
@@ -855,13 +867,25 @@ h2 {
   height: 40px;
   left: 0;
   bottom: 0;
-  border: 1px solid #21212133;
+  padding-left: 42px;
+  border: 1px solid var(--modal__input--br);
   border-radius: 4px;
+  color: var(--primari-text-color);
   transition: border 250ms var(--timing-function);
 }
 .form-input:focus {
   outline: none;
   border: 1px solid var(--accent-color);
+}
+.form-input:-webkit-autofill {
+  border: 1px solid var(--modal__input--br);
+  -webkit-text-fill-color: var(--primari-text-color);
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.form-input:-webkit-autofill:focus {
+  border: 1px solid var(--accent-color);
+  caret-color: var(--primari-text-color);
 }
 .icon-modal {
   position: absolute;
@@ -893,6 +917,7 @@ h2 {
   border: 1px solid #21212133;
   border-radius: 4px;
   transition: border 250ms var(--timing-function);
+  color: var(--primari-text-color);
 }
 .form-comment:focus {
   outline: none;
