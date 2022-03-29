@@ -836,7 +836,7 @@ h2 {
   display: block;
   width: 448px;
   height: 58px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .form-text {
   position: absolute;
@@ -905,9 +905,9 @@ h2 {
   display: block;
   padding-left: 22px;
   margin-left: 14px;
+  line-height: 1.71;
 }
 .checkbox-input {
-  position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -920,6 +920,7 @@ h2 {
   position: absolute;
   width: 16px;
   height: 15px;
+  margin: 4.5px;
   margin-left: -23px;
   border: 2px solid var(--title-text-color);
   border-radius: 4px;
