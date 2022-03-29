@@ -819,12 +819,11 @@ h2 {
   display: block;
   width: 100%;
   height: calc(100%-30px);
-  padding-left: 40px;
-  margin-top: 38px;
+  padding: 40px 40px 120px 40px;
 }
 .title-modal {
   width: 448px;
-  margin-bottom: 12px;
+  margin: 0px 0px 12px 0px;
 
   font-weight: 700;
   font-size: 20px;
